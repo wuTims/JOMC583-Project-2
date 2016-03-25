@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Address Book</title>
+
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+		<script src="../../js/script.js"></script>
+	</head>	
+	<body>
+
+		<div id='cssmenu'>
+			<ul>
+			   <li id="home" class='active'><a id="home_logo" href='/clients'><img src="../../img/healthcard-logo-dribbble.png" alt=""></a></li>
+			   <li id="add_client"><a href='/clients/new'><span>Add Client</span></a></li>
+			</ul>
+		</div>
+		
+
+		<form class="form-container" method="POST" action="/clients/<%= client._id %>">
+				<div class="form-title form-heading">
+					<h1>Edit Client</h1>
+				</div>
+
+				<div class="form-title">
+					<label for="first_name">First Name:</label>
+				</div>
+				<input class="form-field" type="text" name="first_name" value="<%=client.first_name %>">
+			
+			
+				<div class="form-title">
+					<label for="last_name">Last Name: </label>
+				</div>
+				<input class="form-field" type="text" name="last_name" value="<%=client.last_name %>">
+			
+			
+				<div class="form-title">
+					<label for="job_title">Job Title: </label>
+				</div>
+				<input class="form-field" type="text" name="job_title" value="<%=client.job_title %>">
+			
+			
+				<div class="form-title">
+					<label for="street_addr">Street Address: </label>
+				</div>
+				<input class="form-field" type="text" name="street_addr" value="<%=client.street_addr %>">
+			
+			
+				<div class="form-title">
+					<label for="city">City: </label>
+				</div>
+				<input class="form-field" type="text" name="city" value="<%=client.city %>">
+			
+			
+				<div class="form-title">
+					<label for="state">State: </label>
+				</div>
+				<input class="form-field" type="text" name="state" value="<%=client.state %>">
+			
+			
+				<div class="form-title">
+					<label for="zip">Zip: </label>
+				</div>
+				<input class="form-field" type="text" name="zip" value="<%=client.zip %>">
+			
+			
+				<div class="form-title">
+					<label for="notes">Notes: </label>
+				</div>
+				<input class="form-field" type="text" name="notes" value="<%=client.notes %>">
+			
+
+			<div class="submit-container">
+				<button class="submit-button">Update Client</button>
+			</div>
+		</form>
+	</body>
+
+</html>

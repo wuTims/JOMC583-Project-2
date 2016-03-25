@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Address Book</title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+		<div id='cssmenu'>
+			<ul>
+			   <li id="home" class='active'><a id="home_logo" href='/clients'><img src="../img/healthcard-logo-dribbble.png" alt=""></a></li>
+			   <li id="add_client"><a href='/clients/new'><span>Add Client</span></a></li>
+			</ul>
+		</div>
+		
+		<div class="client_body">
+			<div id="client_title">
+				<h1>
+					<%= client.first_name + " " + client.last_name %>
+				</h1>
+				<h3>
+					<%= client.job_title %>
+				</h3>
+			</div>
+			<div id="client_addr">
+				
+					<h4>Address</h4>
+					<span><%= client.street_addr %></span>
+					<br>
+					<span><%= client.city %></span>,
+					<span><%= client.state %></span>
+					<span><%= client.zip %></span>
+				
+			</div>
+			<div id="client_notes">
+				
+					<h4>Notes</h4>
+					<%= client.notes %>
+				
+			</div>
+
+			<a id="edit_client" href="/clients/edit/<%= client._id %>">Edit Client</a>
+		</div>
+
+		
+		<!-- can make navbar with logo in top left. clicking logo will also go home -->
+
+	</body>
+</html>

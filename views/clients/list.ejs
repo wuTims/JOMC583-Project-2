@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Address Book</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+		<script src="js/script.js"></script>
+	</head>	
+	<body>
+		<div id='cssmenu'>
+			<ul>
+			   <li id="home" class='active'><a id="home_logo" href='/clients'><img src="../img/healthcard-logo-dribbble.png" alt=""></a></li>
+			   <li id="add_client"><a href='/clients/new'><span>Add Client</span></a></li>
+			</ul>
+		</div>
+
+		<h1 class="addr_title">My Address Book</h1>
+
+		<%  if(clients.length > 0) { %>
+			<ul class="client_list">
+				<% for(var client of clients){ %>
+					<div class="client_card">
+						<div class="del_container">
+							
+							<a class="del_link" href="/clients/delete/<%= client._id %>">X</a>
+							
+						</div>
+
+						<div class="client_name">
+							
+								<a href="/clients/<%= client._id %>">
+									<div class="name_title">
+										<h2>
+											<%= client.first_name +' '+ client.last_name%>		
+										</h2>
+										<h3>
+											<%= client.job_title %>
+										</h3>
+									</div>
+									
+								</a>
+							
+						</div>	
+					</div>	
+				<% } %>
+			</ul>
+		<% }else{ %>
+			<div class="client_body">
+				No clients in database. Click <strong>ADD CLIENT</strong> to add more clients.
+			</div>
+		<% } %>
+
+
+		<div id="footer">
+			<a href="/project">PROJECT INFORMATION</a>
+		</div>
+	</body>
+
+
+
+</html>
